@@ -71,7 +71,7 @@ getTweets = ((response)=> {
 
       //print a list of screen names that have recently tweeted the hashtag we searched for.
       console.log(tweets.statuses.forEach(statuses => {
-        console.log(statuses.user.screen_name)
+        console.log(statuses.text)
       }))
     });
   });

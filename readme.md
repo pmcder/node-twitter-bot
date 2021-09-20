@@ -2,7 +2,7 @@
 
 This bot is built in node.js and uses the Twitter API to search twitter programatically. </br>
 I have built this with a minimum of external libraries in order to further explore node.js itself.
-This is also makes the project accessible to those learning to code. I have tried to explain everything step by step in the comments and in this readme. 
+This also makes the project accessible to those learning to code. I have tried to explain everything step by step in the comments and in this readme. 
 
 ## Next steps
 I plan to build this out by building functionality for hitting all the different Twitter API endpoints
@@ -25,6 +25,17 @@ Alternately, you can enter these credentials as command line args.
 </br>
 Navigate to the project directory and run <code>npm install</code> </br>
 Once dependencies have finished installing, run <code>node bot.js</code>
+</br>
+
+## Hitting different endpoints
+You can change the variable <code>requestUrl.pathname</code> to hit different endpoints.
+You will need to modify <code>params </params> as well based on what endpoint you are using.
+
+
+## Customizing the output
+You can tweak the output itself by modifying <code>getTweets</code>
+I recomend uncommenting <code>console.log(tweets.statuses)</code>
+to see the full JSON output to get to know the data.
 
 
 
