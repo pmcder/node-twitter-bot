@@ -29,7 +29,7 @@ Once dependencies have finished installing, run <code>node bot.js</code>
 
 ## Hitting different endpoints
 You can change the variable <code>requestUrl.pathname</code> to hit different endpoints.
-You will need to modify <code>params </params> as well based on what endpoint you are using.
+You will need to modify <code>params </code> as well based on what endpoint you are using.
 
 
 ## Customizing the output
