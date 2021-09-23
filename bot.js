@@ -24,9 +24,8 @@ const searchRecentPath = "/1.1/search/tweets.json";
 //set search params 
 const params = new URLSearchParams([
   //from specific user
-     // ['from','lildot96'],
-  //specific user id TODO - get user endpoint up and running
-  //['q','1037304416297209900']
+     // ['from','<user_name>'],
+  
   //search for hashtag minecraft 
         ['q','%23minecraft']
        
