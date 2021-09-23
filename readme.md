@@ -33,9 +33,9 @@ You will need to modify <code>params </code> as well based on what endpoint you 
 
 
 ## Customizing the output
-You can tweak the output itself by modifying <code>getTweets</code>
-I recomend uncommenting <code>console.log(tweets.statuses)</code>
-to see the full JSON output to get to know the data.
+You can tweak the output itself by using different functions on the viewTweets module.
+For example <code>viewTweets.users</code> prints a list of users to the console
+If you use <code>viewTweets.statuses</code> you can see the whole status object to familiarize yourself with the data and then create new functions in viewTweets.js
 
 
 
