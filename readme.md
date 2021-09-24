@@ -27,15 +27,17 @@ Navigate to the project directory and run <code>npm install</code> </br>
 Once dependencies have finished installing, run <code>node bot.js</code>
 </br>
 
-## Hitting different endpoints
-You can change the variable <code>requestUrl.pathname</code> to hit different endpoints.
-You will need to modify <code>params </code> as well based on what endpoint you are using.
+## Performing different searches
+In bot.js you can change the method on <code>getTweet</code></br>
+<code>getTweets.searchByHashtag()</code> allows you to search by hashtag</br>
+<code>geTweets.searchByUser()</code> allows you to search by user</br>
 
 
 ## Customizing the output
 You can tweak the output itself by using different functions on the viewTweets module.
 For example <code>viewTweets.users</code> prints a list of users to the console
-If you use <code>viewTweets.statuses</code> you can see the whole status object to familiarize yourself with the data and then create new functions in viewTweets.js
+If you use <code>viewTweets.statuses</code> you can see the whole status object to familiarize yourself with the data and then create new functions in viewTweets.js  
+
 
 
 

@@ -20,11 +20,7 @@ statuses = ((response) => {
     });
 });
 
-/**
- * prints list of user screen names and the text of their tweet
- * to the console.
- */
-statusTextAndUser = ((response) => {
+statusText = ((response) => {
 
     var str = ''
 
@@ -37,7 +33,7 @@ statusTextAndUser = ((response) => {
         let tweets = JSON.parse(str)
 
         console.log(tweets.statuses.forEach(statuses => {
-            console.log('user: ' + statuses.user.screen_name + '\t' + 'tweet: ' + statuses.text)
+            console.log(colors.yellow(statuses.text+'\n'))
         }))
     });
 });
@@ -66,5 +62,5 @@ users = ((response) => {
 module.exports = {
     statuses: statuses,
     users: users,
-    statusTextAndUser: statusTextAndUser
+    statusText: statusText
 }
