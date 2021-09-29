@@ -1,15 +1,14 @@
-
+const { Console } = require('console');
+const { mainModule } = require('process');
 const credentials = require('./credentials');
-
 const getTweets = require('./getTweets');
-
-const viewTweets = require('./viewTweets')
-
-//The first parameter is the hashtag we want to search as a string without the # sign
-//use the viewTweets module to change the output
-getTweets.searchByHashtag('minecraft',viewTweets.statusText);
+var colors = require('colors/safe');
 
 
-
-
+//search for screen names by hashtag
+getTweets.searchByHashtag('minecraft').then((data) => {
+    data.statuses.forEach(statuses => {
+        console.log(colors.green(statuses.user.screen_name + '\n'))
+    });
+});
 

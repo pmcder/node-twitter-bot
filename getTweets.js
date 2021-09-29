@@ -5,8 +5,6 @@ var https = require('https');
 
 const { threadId } = require('worker_threads');
 
-const viewTweets = require('./viewTweets')
-
 const apiKey = process.env.API_KEY || credentials.API_KEY;
 const apiKeySecret = process.env.API_KEY_SECRET || credentials.API_KEY_SECRET;
 const bearerToken = process.env.BEARER_TOKEN || credentials.BEARER_TOKEN;
@@ -29,28 +27,84 @@ const options = {
     }
 }
 
-searchByUser = (user_name,output)=>{
-
+function searchByUser(user_name) {
+   
+    return new Promise((resolve, reject) => {
+   
     let params = new URLSearchParams([
-        ['from',user_name]  
+        ['from',`${user_name}`]  
 ]);
-    
+    const options = {
+        headers: {
+            'authorization': `Bearer ${bearerToken}`
+        }
+    }
     requestUrl.search = params;
-
-    https.get(requestUrl,options,output)
+       const req = https.request(requestUrl,options, (res) => {
+         if (res.statusCode < 200 || res.statusCode >= 300) {
+               return reject(new Error('statusCode=' + res.statusCode));
+           }
+           var str = " "
+           var tweets;
+           res.on('data', function(chunk) {
+            str += chunk
+           });
+           res.on('end', function() {
+               try {
+                tweets = JSON.parse(str)
+               } catch(e) {
+                   reject(e);
+               }
+               resolve(tweets);
+           });
+       });
+       req.on('error', (e) => {
+         reject(e.message);
+       });
+       
+      req.end();
+   });
 }
 
-searchByHashtag = (hashtag,output)=>{
-
+function searchByHashtag(hashtag) {
+   
+    return new Promise((resolve, reject) => {
+   
     let params = new URLSearchParams([
-              ['q',`%23${hashtag}`]  
-      ]);
-
+        ['q',`%23${hashtag}`]  
+]);
+    const options = {
+        headers: {
+            'authorization': `Bearer ${bearerToken}`
+        }
+    }
     requestUrl.search = params;
-
-    https.get(requestUrl,options,output)
+       const req = https.request(requestUrl,options, (res) => {
+         if (res.statusCode < 200 || res.statusCode >= 300) {
+               return reject(new Error('statusCode=' + res.statusCode));
+           }
+           var str = " "
+           var tweets;
+           res.on('data', function(chunk) {
+            str += chunk
+           });
+           res.on('end', function() {
+               try {
+                tweets = JSON.parse(str)
+               } catch(e) {
+                   reject(e);
+               }
+               resolve(tweets);
+           });
+       });
+       req.on('error', (e) => {
+         reject(e.message);
+       });
+       
+      req.end();
+   });
 }
-
+    
 module.exports = {
     searchByUser : searchByUser,
     searchByHashtag : searchByHashtag

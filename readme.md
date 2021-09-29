@@ -5,7 +5,7 @@ I have built this with a minimum of external libraries in order to further explo
 This also makes the project accessible to those learning to code. I have tried to explain everything step by step in the comments and in this readme. 
 
 ## Next steps
-I plan to build this out by building functionality for hitting all the different Twitter API endpoints
+I plan to build this out by building functionality for hitting all the different Twitter API endpoints as well save search results to MongoDB.
 
 
 ## Running 
@@ -28,15 +28,13 @@ Once dependencies have finished installing, run <code>node bot.js</code>
 </br>
 
 ## Performing different searches
-In bot.js you can change the method on <code>getTweet</code></br>
+In bot.js you can use the methods on <code>getTweets</code> to perform different searches.</br>
 <code>getTweets.searchByHashtag()</code> allows you to search by hashtag</br>
-<code>geTweets.searchByUser()</code> allows you to search by user</br>
+<code>getTweets.searchByUser()</code> allows you to search by user</br>
+Here you can write logic to combine and automate different searches. For example, you could get a list of user names that have tweeted about a certain hashtag, then search those users' recent tweets. 
 
 
-## Customizing the output
-You can tweak the output itself by using different functions on the viewTweets module.
-For example <code>viewTweets.users</code> prints a list of users to the console
-If you use <code>viewTweets.statuses</code> you can see the whole status object to familiarize yourself with the data and then create new functions in viewTweets.js  
+
 
 
 
