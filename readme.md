@@ -36,7 +36,7 @@ The bot currently supports two save functions.</br>
 ### Saving users
 <code>results.saveUsers</code> will save a list of user names and the hashtag that was searched for. This the <code>screen_name</code>attribute on the user object in a status (tweet). </br>
 ### Saving users' tweets</br>
-<code>results.saveTweets</br> will iterate through all the users that have tweeted about a given hashtag and then save that user's recent tweets and their username to the database.
+<code>results.saveTweets</code> will iterate through all the users that have tweeted about a given hashtag and then save that user's recent tweets and their username to the database.
 
 
 
