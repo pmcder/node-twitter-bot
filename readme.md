@@ -1,10 +1,10 @@
 ## Overview 
 
 This bot is built in node.js and uses the Twitter API to search twitter programatically. </br>
-I have built this with a minimum of external libraries in order to further explore node.js itself.
  
 ## Next steps
-Among the next steps for this application are building methods for hitting all the different Twitter API endpointsand building out the functionality for saving and anaylizing tweets.
+Among the next steps for this application are building methods for hitting all the different Twitter API endpointsand building out the functionality for saving and anaylizing tweets.</br>
+You can view the *[project page](https://github.com/pmcder/node-twitter-bot/projects)for more details on this project's current tasks.
 
 ## Running 
 
