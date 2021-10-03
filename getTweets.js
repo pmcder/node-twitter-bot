@@ -45,6 +45,7 @@ function searchByUser(user_name) {
                return reject(new Error('statusCode=' + res.statusCode));
            }
            var str = " "
+           
            var tweets;
            res.on('data', function(chunk) {
             str += chunk
@@ -52,9 +53,11 @@ function searchByUser(user_name) {
            res.on('end', function() {
                try {
                 tweets = JSON.parse(str)
+           
                } catch(e) {
                    reject(e);
                }
+               
                resolve(tweets);
            });
        });
@@ -84,6 +87,7 @@ function searchByHashtag(hashtag) {
                return reject(new Error('statusCode=' + res.statusCode));
            }
            var str = " "
+       
            var tweets;
            res.on('data', function(chunk) {
             str += chunk

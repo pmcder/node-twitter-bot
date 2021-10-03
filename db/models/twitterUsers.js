@@ -6,8 +6,8 @@ let model = null;
 
 const twitterUserSchema = new Schema({
 
- searchTerm : string,
- user_names : [string]
+ searchTerm : String,
+ user_names : [String]
 
 },
 {collection : 'twitterUsers'});
